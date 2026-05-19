@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terraza Un Sueño – Eventos Inolvidables en Guadalajara</title>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --night:#0A0D12;--deep:#111620;--card:#161C28;--blue:#1E3A5F;
+  --sky:#4A90C4;--gold:#E8C97A;--white:#F4F6FA;--muted:#8892A4;--soft:#1A2030;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--night);color:var(--white);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;transition:all 0.4s}
+nav.scrolled{background:rgba(10,13,18,0.93);backdrop-filter:blur(16px);padding:1rem 3rem;border-bottom:1px solid rgba(74,144,196,0.15)}
+nav.solid{background:rgba(10,13,18,0.97);backdrop-filter:blur(16px);padding:1rem 3rem;border-bottom:1px solid rgba(74,144,196,0.15)}
+.logo{font-family:'Tenor Sans',serif;font-size:1.3rem;letter-spacing:0.2em;color:var(--white);text-transform:uppercase;cursor:pointer}
+.logo span{color:var(--gold)}
+nav ul{display:flex;gap:0;list-style:none}
+nav ul li a{text-decoration:none;font-size:0.72rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;transition:all 0.2s;padding:0.5rem 1rem;border-radius:4px;display:block;position:relative}
+nav ul li a::after{content:'';position:absolute;bottom:-2px;left:1rem;right:1rem;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s}
+nav ul li a:hover{color:var(--white)}
+nav ul li a.active{color:var(--gold)}
+nav ul li a.active::after{transform:scaleX(1)}
+.nav-cta{background:linear-gradient(135deg,var(--sky),var(--blue));color:var(--white)!important;padding:0.6rem 1.4rem;border-radius:30px;font-size:0.7rem!important;transition:opacity 0.2s!important;margin-left:1rem}
+.nav-cta:hover{opacity:0.85}
+.nav-mobile-cta{display:none}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;display:block}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(10,13,18,0.97);z-index:250;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'Tenor Sans',serif;font-size:1.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--white);text-decoration:none;transition:color 0.2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--gold)}
+.mobile-menu-cta{background:linear-gradient(135deg,var(--gold),#c9a555);color:#0A0D12!important;padding:0.9rem 2.5rem;border-radius:30px;font-size:1rem!important;font-weight:600!important;margin-top:0.5rem}
+
+/* ── VIEWS ── */
+.view{display:none;opacity:0;transition:opacity 0.4s}
+.view.active{display:block;opacity:1}
+
+/* ── HOME ── */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:#0d1829}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;filter:brightness(0.3)}
+.hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(135deg,rgba(10,13,18,0.78) 0%,rgba(30,58,95,0.2) 100%);pointer-events:none}
+#particles{position:absolute;inset:0;z-index:3;pointer-events:none}
+.hero-content{position:relative;z-index:4;padding:0 4rem;max-width:720px}
+.hero-tag{display:inline-flex;align-items:center;gap:0.6rem;background:rgba(74,144,196,0.12);border:1px solid rgba(74,144,196,0.3);padding:0.4rem 1rem;border-radius:30px;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sky);margin-bottom:2rem}
+.hero-dot{width:6px;height:6px;background:var(--sky);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(1.4)}}
+.hero-title{font-family:'Tenor Sans',serif;font-size:5.2rem;line-height:1;margin-bottom:1.5rem}
+.hero-title em{font-style:italic;background:linear-gradient(135deg,var(--gold),#a8d4f5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1rem;color:rgba(244,246,250,0.65);line-height:1.8;font-weight:300;max-width:480px;margin-bottom:3rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-gold{display:inline-block;background:linear-gradient(135deg,var(--gold),#c9a555);color:#0A0D12;padding:1rem 2.2rem;font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;border-radius:30px;font-weight:600;transition:transform 0.2s,box-shadow 0.2s;cursor:pointer;border:none;font-family:'Outfit',sans-serif}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,201,122,0.35)}
+.btn-play{display:inline-flex;align-items:center;gap:0.6rem;color:rgba(244,246,250,0.8);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:color 0.2s;cursor:pointer;background:none;border:none;font-family:'Outfit',sans-serif}
+.btn-play:hover{color:var(--gold)}
+.play-circle{width:36px;height:36px;border:1px solid rgba(244,246,250,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:0.5rem;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,246,250,0.35)}
+.scroll-bar{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollDown 2s infinite}
+@keyframes scrollDown{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero-stats{position:absolute;bottom:0;right:0;z-index:4;display:flex}
+.stat-blk{background:rgba(10,13,18,0.82);backdrop-filter:blur(10px);padding:1.4rem 1.8rem;border-top:1px solid rgba(74,144,196,0.15);text-align:center;min-width:100px}
+.stat-blk-num{font-family:'Tenor Sans',serif;font-size:1.6rem;color:var(--gold);display:block;line-height:1}
+.stat-blk-label{font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;display:block}
+.strip{background:var(--deep);border-top:1px solid rgba(74,144,196,0.08);border-bottom:1px solid rgba(74,144,196,0.08);padding:0.85rem 3rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;overflow:hidden}
+.strip-item{font-size:0.67rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:0.5rem;white-space:nowrap;cursor:pointer;transition:color 0.2s}
+.strip-item:hover{color:var(--gold)}
+.strip-item::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%}
+
+/* HOME mini cards */
+.home-cards{padding:5rem 3rem;background:var(--night);display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.hc{background:var(--card);border:1px solid rgba(74,144,196,0.1);border-radius:10px;padding:2rem 1.5rem;cursor:pointer;transition:all 0.3s;text-align:center}
+.hc:hover{border-color:rgba(232,201,122,0.35);transform:translateY(-5px);background:var(--soft)}
+.hc-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.hc-title{font-family:'Tenor Sans',serif;font-size:1.2rem;color:var(--white);margin-bottom:0.5rem}
+.hc-desc{font-size:0.78rem;color:var(--muted);line-height:1.5}
+.hc-arrow{display:inline-block;margin-top:1rem;font-size:0.7rem;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase}
+
+/* Testimonios en home */
+.home-test{padding:4rem 3rem;background:var(--deep)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+.tc{background:var(--card);border:1px solid rgba(74,144,196,0.08);border-radius:10px;padding:2rem;transition:border-color 0.2s}
+.tc:hover{border-color:rgba(232,201,122,0.2)}
+.tc-stars{color:var(--gold);font-size:0.82rem;letter-spacing:0.1em;margin-bottom:1rem}
+.tc-text{font-size:0.84rem;color:rgba(244,246,250,0.65);line-height:1.8;font-style:italic;margin-bottom:1.2rem}
+.tc-author{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--sky)}
+.tc-event{font-size:0.66rem;color:var(--muted);margin-top:0.2rem}
+
+/* ── PAGE HEADER ── */
+.page-header{position:relative;height:380px;overflow:hidden;display:flex;align-items:flex-end;padding:3rem}
+.page-header img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.3)}
+.page-header-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,13,18,0.95) 0%,rgba(10,13,18,0.3) 100%)}
+.page-header-content{position:relative;z-index:1}
+.page-header-tag{font-size:0.67rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--sky);display:flex;align-items:center;gap:0.7rem;margin-bottom:0.8rem}
+.page-header-tag::before{content:'';width:18px;height:1px;background:var(--sky)}
+.page-header-title{font-family:'Tenor Sans',serif;font-size:3.5rem;color:var(--white);line-height:1}
+.page-header-title span{color:var(--gold)}
+
+/* ── SEC HELPERS ── */
+.sec-tag{font-size:0.67rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--sky);display:flex;align-items:center;gap:0.7rem;margin-bottom:1rem}
+.sec-tag::before{content:'';width:18px;height:1px;background:var(--sky)}
+.sec-title{font-family:'Tenor Sans',serif;font-size:2.6rem;line-height:1.1;color:var(--white)}
+.sec-title span{color:var(--gold)}
+.fi{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease}
+.fi.on{opacity:1;transform:translateY(0)}
+
+/* ── EVENTOS VIEW ── */
+.ev-intro{padding:4rem 3rem;background:var(--night);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.ev-intro-body{font-size:0.92rem;color:var(--muted);line-height:1.9;font-weight:300;margin:1.5rem 0 2rem}
+.ev-types{padding:3rem 3rem 5rem;background:var(--night);display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.ev-type-card{position:relative;overflow:hidden;border-radius:8px;height:320px;cursor:default}
+.ev-type-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;display:block;filter:brightness(0.7)}
+.ev-type-card:hover img{transform:scale(1.06);filter:brightness(0.85)}
+.ev-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,13,18,0.92) 0%,transparent 55%)}
+.ev-info{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;z-index:1}
+.ev-info-name{font-family:'Tenor Sans',serif;font-size:1.5rem;color:var(--white);margin-bottom:0.3rem}
+.ev-info-desc{font-size:0.75rem;color:rgba(244,246,250,0.55)}
+.ev-badge{position:absolute;top:1rem;left:1rem;background:rgba(232,201,122,0.12);border:1px solid rgba(232,201,122,0.3);color:var(--gold);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:20px}
+.ev-cta-band{background:var(--deep);padding:3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.ev-cta-text{font-family:'Tenor Sans',serif;font-size:1.8rem;color:var(--white)}
+.ev-cta-text span{color:var(--gold)}
+
+/* ── ESPACIO VIEW ── */
+.esp-split{padding:4rem 3rem 5rem;background:var(--night);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.esp-body{font-size:0.9rem;color:var(--muted);line-height:1.9;margin:1.5rem 0 2rem;font-weight:300}
+.esp-feats{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:2.5rem}
+.ef{display:flex;align-items:center;gap:0.8rem;background:var(--soft);border:1px solid rgba(74,144,196,0.08);padding:0.8rem 1rem;border-radius:6px;transition:border-color 0.2s}
+.ef:hover{border-color:rgba(74,144,196,0.3)}
+.ef-icon{font-size:1rem;flex-shrink:0}
+.ef-text{font-size:0.77rem;color:var(--white);line-height:1.4}
+.esp-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:220px 220px;gap:0.6rem;border-radius:6px;overflow:hidden}
+.mos-main{grid-row:span 2;overflow:hidden}
+.mos-sm{overflow:hidden}
+.mos-main img,.mos-sm img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;display:block}
+.mos-main:hover img,.mos-sm:hover img{transform:scale(1.05)}
+.esp-caps{padding:3rem;background:var(--deep);display:grid;grid-template-columns:repeat(4,1fr);gap:1px}
+.cap-item{background:var(--card);padding:2rem;text-align:center}
+.cap-num{font-family:'Tenor Sans',serif;font-size:2.5rem;color:var(--gold)}
+.cap-label{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:0.3rem}
+.vbanner{position:relative;height:360px;overflow:hidden;background:linear-gradient(135deg,#0d1829,#1a2540)}
+.vbanner video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.32)}
+.vbanner-over{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1rem;padding:2rem}
+.vb-quote{font-family:'Tenor Sans',serif;font-size:2.4rem;color:var(--white);max-width:680px;line-height:1.2}
+.vb-quote span{color:var(--gold);font-style:italic}
+.vb-sub{font-size:0.8rem;color:rgba(244,246,250,0.45);letter-spacing:0.12em;text-transform:uppercase}
+
+/* ── PAQUETES VIEW ── */
+.pkgs-intro{padding:4rem 3rem 2rem;background:var(--night);text-align:center;max-width:700px;margin:0 auto}
+.pkgs-intro-body{font-size:0.92rem;color:var(--muted);line-height:1.8;margin-top:1.5rem}
+.pkgs-grid{padding:2rem 3rem 5rem;background:var(--night);display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;max-width:1200px;margin:0 auto}
+.pkg{background:var(--card);border:1px solid rgba(74,144,196,0.1);border-radius:10px;padding:2.5rem 2rem;position:relative;transition:border-color 0.3s,transform 0.3s}
+.pkg:hover{border-color:rgba(74,144,196,0.3);transform:translateY(-5px)}
+.pkg.feat{background:linear-gradient(160deg,var(--blue) 0%,var(--deep) 100%);border-color:rgba(74,144,196,0.35)}
+.pkg-ribbon{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold),#c9a555);color:#0A0D12;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.3rem 1.2rem;border-radius:0 0 8px 8px;font-weight:600}
+.pkg-ico{width:44px;height:44px;background:rgba(74,144,196,0.1);border:1px solid rgba(74,144,196,0.18);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1.2rem}
+.pkg-name{font-family:'Tenor Sans',serif;font-size:1.45rem;color:var(--white);margin-bottom:0.4rem}
+.pkg-desc{font-size:0.77rem;color:var(--muted);line-height:1.6;margin-bottom:1.4rem}
+.pkg-price{font-family:'Tenor Sans',serif;font-size:1.3rem;color:var(--gold);margin-bottom:0.2rem}
+.pkg-note{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem}
+.pkg-div{height:1px;background:rgba(74,144,196,0.1);margin-bottom:1.2rem}
+.pkg-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2rem}
+.pkg-list li{font-size:0.79rem;color:rgba(244,246,250,0.65);display:flex;gap:0.6rem;align-items:flex-start}
+.pkg-list li::before{content:'✦';color:var(--gold);font-size:0.52rem;margin-top:0.28rem;flex-shrink:0}
+.btn-pkg{display:block;text-align:center;border:1px solid rgba(74,144,196,0.25);color:var(--white);padding:0.8rem;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:all 0.2s;cursor:pointer;background:none;width:100%;font-family:'Outfit',sans-serif}
+.btn-pkg:hover{background:rgba(74,144,196,0.12);border-color:var(--sky)}
+.pkg.feat .btn-pkg{background:linear-gradient(135deg,var(--gold),#c9a555);border-color:transparent;color:#0A0D12;font-weight:600}
+.pkg.feat .btn-pkg:hover{opacity:0.85}
+.pkgs-cta{background:var(--deep);padding:3rem;text-align:center}
+.pkgs-cta p{font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem}
+
+/* ── GALERIA VIEW ── */
+.gal-intro{padding:4rem 3rem 2rem;background:var(--night)}
+.gal-filters{display:flex;gap:0.7rem;flex-wrap:wrap;margin-top:1.5rem}
+.gf{background:var(--soft);border:1px solid rgba(74,144,196,0.1);color:var(--muted);padding:0.5rem 1.2rem;border-radius:30px;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:'Outfit',sans-serif}
+.gf:hover,.gf.active{background:rgba(74,144,196,0.15);border-color:var(--sky);color:var(--white)}
+.gal-masonry{padding:2rem 3rem 5rem;background:var(--night);display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem}
+.gi{overflow:hidden;border-radius:6px;cursor:zoom-in;position:relative}
+.gi.tall{grid-row:span 2}
+.gi.wide{grid-column:span 2}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s,filter 0.3s;display:block;filter:brightness(0.82);min-height:200px}
+.gi:hover img{transform:scale(1.06);filter:brightness(1)}
+.gi-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,13,18,0.85),transparent);padding:0.8rem;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,246,250,0.6);opacity:0;transition:opacity 0.3s}
+.gi:hover .gi-label{opacity:1}
+
+/* ── RESERVA VIEW ── */
+.res-view{padding:5rem 3rem;background:var(--night);display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start;min-height:80vh}
+.res-body{font-size:0.9rem;color:var(--muted);line-height:1.9;margin:1.5rem 0 2rem}
+.res-info{display:flex;flex-direction:column;gap:0.9rem;margin-bottom:1.5rem}
+.res-row{display:flex;align-items:center;gap:0.9rem;font-size:0.83rem;color:var(--muted)}
+.res-row strong{color:var(--white)}
+.res-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.cal-legend{display:flex;flex-wrap:wrap;gap:0.8rem;margin-top:0.5rem}
+.leg-item{display:flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--muted)}
+.leg-dot{width:8px;height:8px;border-radius:50%}
+.ld-a{background:#4CAF82}.ld-o{background:#E05C5C}.ld-p{background:#D4A838}.ld-s{background:var(--gold)}
+.form-card{background:var(--card);border:1px solid rgba(74,144,196,0.12);border-radius:10px;padding:2.5rem}
+.form-card-title{font-family:'Tenor Sans',serif;font-size:1.5rem;color:var(--white);margin-bottom:1.2rem}
+.cal-wrap{background:var(--soft);border-radius:6px;padding:1.2rem;margin-bottom:1rem;border:1px solid rgba(74,144,196,0.08)}
+.cal-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.cal-lbl{font-family:'Tenor Sans',serif;font-size:1rem;color:var(--white)}
+.cal-btn{background:none;border:1px solid rgba(74,144,196,0.18);color:var(--muted);width:28px;height:28px;cursor:pointer;font-size:1rem;border-radius:4px;transition:all 0.2s;display:flex;align-items:center;justify-content:center}
+.cal-btn:hover{background:rgba(74,144,196,0.15);color:var(--white)}
+.cal-wkdays{display:grid;grid-template-columns:repeat(7,1fr);margin-bottom:0.4rem}
+.cal-wkdays span{text-align:center;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:0.3rem 0}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.cd{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:0.77rem;border-radius:4px;cursor:default;transition:all 0.14s;position:relative;font-family:'Outfit',sans-serif}
+.cd.blank,.cd.past{color:rgba(136,146,164,0.25)}
+.cd.avail{background:rgba(76,175,130,0.1);color:#4CAF82;cursor:pointer;font-weight:500}
+.cd.avail:hover{background:#4CAF82;color:#fff;transform:scale(1.08)}
+.cd.occ{background:rgba(224,92,92,0.1);color:#E05C5C;cursor:not-allowed}
+.cd.occ::after{content:'✕';position:absolute;font-size:0.42rem;bottom:2px;right:3px;color:#E05C5C}
+.cd.pend{background:rgba(212,168,56,0.1);color:#D4A838;cursor:not-allowed}
+.cd.sel{background:linear-gradient(135deg,var(--gold),#c9a555)!important;color:#0A0D12!important;transform:scale(1.1);box-shadow:0 2px 10px rgba(232,201,122,0.35);font-weight:600}
+.fecha-badge{background:rgba(232,201,122,0.07);border:1px solid rgba(232,201,122,0.2);border-left:3px solid var(--gold);padding:0.65rem 0.9rem;font-size:0.79rem;color:var(--white);margin-bottom:1rem;border-radius:2px;display:none}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:0.8rem}
+.fg-group{display:flex;flex-direction:column;gap:0.35rem}
+.fg-group.full{grid-column:span 2}
+.fg-group label{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted)}
+.fg-group input,.fg-group select,.fg-group textarea{border:1px solid rgba(74,144,196,0.12);background:var(--night);padding:0.68rem 0.9rem;font-size:0.81rem;font-family:'Outfit',sans-serif;color:var(--white);outline:none;transition:border-color 0.2s;border-radius:4px}
+.fg-group input:focus,.fg-group select:focus,.fg-group textarea:focus{border-color:var(--sky)}
+.fg-group select option{background:var(--deep)}
+.fg-group textarea{resize:vertical;min-height:70px}
+.btn-submit{width:100%;background:linear-gradient(135deg,var(--gold),#c9a555);color:#0A0D12;border:none;padding:1rem;font-size:0.77rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:'Outfit',sans-serif;margin-top:0.5rem;border-radius:6px;font-weight:600;transition:opacity 0.2s,transform 0.2s}
+.btn-submit:hover{opacity:0.88;transform:translateY(-1px)}
+
+/* ── FOOTER ── */
+footer{background:#060809;padding:4rem 3rem 2rem;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem}
+.ft-logo{font-family:'Tenor Sans',serif;font-size:1.4rem;letter-spacing:0.2em;color:var(--white);text-transform:uppercase;margin-bottom:0.8rem}
+.ft-logo span{color:var(--gold)}
+.ft-txt{font-size:0.77rem;color:var(--muted);line-height:1.7;max-width:230px;margin-bottom:1.4rem}
+.ft-social{display:flex;gap:0.7rem}
+.soc-btn{width:34px;height:34px;background:var(--deep);border:1px solid rgba(74,144,196,0.12);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--muted);text-decoration:none;transition:all 0.2s}
+.soc-btn:hover{border-color:var(--sky);color:var(--sky)}
+.ft-col-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:1.1rem}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
+.ft-links a{font-size:0.77rem;color:var(--muted);text-decoration:none;transition:color 0.2s;cursor:pointer}
+.ft-links a:hover{color:var(--gold)}
+.ft-bottom{background:#060809;border-top:1px solid rgba(74,144,196,0.07);padding:1.2rem 3rem;display:flex;justify-content:space-between;font-size:0.68rem;color:#3A4252}
+
+/* LIGHTBOX */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:1000;display:flex;align-items:center;justify-content:center;cursor:zoom-out;opacity:0;pointer-events:none;transition:opacity 0.3s}
+#lightbox.open{opacity:1;pointer-events:all}
+#lb-img{max-width:92vw;max-height:88vh;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,0.7);transform:scale(0.92);transition:transform 0.3s}
+#lightbox.open #lb-img{transform:scale(1)}
+#lb-close{position:absolute;top:1.5rem;right:1.5rem;color:rgba(255,255,255,0.6);font-size:1.5rem;cursor:pointer;background:none;border:none;transition:color 0.2s}
+#lb-close:hover{color:var(--gold)}
+/* TOAST */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(10px);background:var(--card);border:1px solid rgba(74,144,196,0.2);color:var(--white);padding:0.85rem 1.8rem;border-radius:30px;font-size:0.81rem;opacity:0;pointer-events:none;transition:all 0.3s;z-index:999}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.ok{border-color:rgba(76,175,130,0.4);background:#0c1d14}
+.toast.err{border-color:rgba(224,92,92,0.4);background:#1d0c0c}
+/* PKG MODAL */
+#pkg-modal{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:900;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s}
+#pkg-modal.open{opacity:1;pointer-events:all}
+.pkg-modal-card{background:var(--card);border:1px solid rgba(74,144,196,0.2);border-radius:10px;padding:2.5rem;max-width:420px;width:90%;position:relative}
+.pkg-modal-title{font-family:'Tenor Sans',serif;font-size:1.6rem;color:var(--white);margin-bottom:0.5rem}
+.pkg-modal-body{font-size:0.85rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.pkg-modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer}
+.pkg-modal-close:hover{color:var(--white)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  nav ul{display:none}
+  .hamburger{display:flex}
+  .nav-mobile-cta{display:none}
+  .hero-content{padding:0 1.5rem}
+  .hero-title{font-size:2.6rem}
+  .hero-stats{display:none}
+  .strip{padding:0.8rem 1.5rem;gap:1.2rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
+  .home-cards{padding:3rem 1.5rem;grid-template-columns:1fr 1fr;gap:0.8rem}
+  .home-test{padding:3rem 1.5rem}
+  .test-grid{grid-template-columns:1fr}
+  .page-header{height:260px;padding:2rem 1.5rem}
+  .page-header-title{font-size:2.2rem}
+  .ev-intro{padding:3rem 1.5rem;grid-template-columns:1fr;gap:2rem}
+  .ev-types{padding:2rem 1.5rem 4rem;grid-template-columns:1fr;gap:0.8rem}
+  .ev-type-card{height:240px}
+  .ev-cta-band{padding:2rem 1.5rem;flex-direction:column;text-align:center}
+  .ev-cta-text{font-size:1.4rem}
+  .esp-split{padding:3rem 1.5rem 4rem;grid-template-columns:1fr;gap:2.5rem}
+  .esp-mosaic{height:260px}
+  .esp-feats{grid-template-columns:1fr}
+  .esp-caps{grid-template-columns:1fr 1fr}
+  .vbanner{height:240px}
+  .vb-quote{font-size:1.4rem}
+  .pkgs-intro{padding:3rem 1.5rem 1rem}
+  .pkgs-grid{padding:1.5rem 1.5rem 4rem;grid-template-columns:1fr}
+  .pkgs-cta{padding:2rem 1.5rem}
+  .gal-intro{padding:3rem 1.5rem 1rem}
+  .gal-masonry{padding:1.5rem 1.5rem 4rem;grid-template-columns:1fr 1fr;gap:0.5rem}
+  .gi.tall,.gi.wide{grid-row:span 1;grid-column:span 1}
+  .res-view{padding:3rem 1.5rem;grid-template-columns:1fr;gap:2.5rem}
+  .fg{grid-template-columns:1fr}
+  .fg-group.full{grid-column:span 1}
+  footer{grid-template-columns:1fr;padding:2.5rem 1.5rem;gap:2rem}
+  .ft-bottom{padding:1rem 1.5rem;flex-direction:column;gap:0.4rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="logo" onclick="goTo('home')">Un <span>Sueño</span></div>
+  <ul>
+    <li><a href="#" onclick="goTo('eventos')" data-view="eventos">Eventos</a></li>
+    <li><a href="#" onclick="goTo('espacio')" data-view="espacio">El Espacio</a></li>
+    <li><a href="#" onclick="goTo('paquetes')" data-view="paquetes">Paquetes</a></li>
+    <li><a href="#" onclick="goTo('galeria')" data-view="galeria">Galería</a></li>
+    <li><a href="#" onclick="goTo('reserva')" class="nav-cta" data-view="reserva">Reservar fecha</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="goTo('home');toggleMenu()">Inicio</a>
+  <a href="#" onclick="goTo('eventos');toggleMenu()" data-view="eventos">Eventos</a>
+  <a href="#" onclick="goTo('espacio');toggleMenu()" data-view="espacio">El Espacio</a>
+  <a href="#" onclick="goTo('paquetes');toggleMenu()" data-view="paquetes">Paquetes</a>
+  <a href="#" onclick="goTo('galeria');toggleMenu()" data-view="galeria">Galería</a>
+  <a href="#" onclick="goTo('reserva');toggleMenu()" class="mobile-menu-cta" data-view="reserva">Reservar fecha</a>
+</div>
+
+<!-- ════════════════════════════════════════
+     VIEW: HOME
+════════════════════════════════════════ -->
+<div class="view active" id="view-home">
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://cdn.coverr.co/videos/coverr-wedding-reception-3478/1080p.mp4" type="video/mp4">
+      <source src="https://cdn.coverr.co/videos/coverr-a-party-at-night-2922/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <canvas id="particles"></canvas>
+    <div class="hero-content">
+      <div class="hero-tag"><div class="hero-dot"></div>Terraza de Eventos · Guadalajara</div>
+      <h1 class="hero-title">Donde cada<br>celebración se<br>vuelve <em>mágica</em></h1>
+      <p class="hero-sub">Bodas, XV años, graduaciones y eventos corporativos. Un espacio diseñado para que cada instante sea eterno.</p>
+      <div class="hero-btns">
+        <button class="btn-gold" onclick="goTo('reserva')">Apartar mi fecha</button>
+        <button class="btn-play" onclick="goTo('paquetes')"><span class="play-circle">▶</span>Ver paquetes</button>
+      </div>
+    </div>
+    <div class="hero-scroll"><div class="scroll-bar"></div>Scroll</div>
+    <div class="hero-stats">
+      <div class="stat-blk"><span class="stat-blk-num">5.0★</span><span class="stat-blk-label">Google</span></div>
+      <div class="stat-blk"><span class="stat-blk-num">+300</span><span class="stat-blk-label">Eventos</span></div>
+      <div class="stat-blk"><span class="stat-blk-num">8+</span><span class="stat-blk-label">Años</span></div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="strip-item" onclick="goTo('eventos')">Bodas</div>
+    <div class="strip-item" onclick="goTo('eventos')">XV Años</div>
+    <div class="strip-item" onclick="goTo('eventos')">Graduaciones</div>
+    <div class="strip-item" onclick="goTo('eventos')">Bautizos</div>
+    <div class="strip-item" onclick="goTo('eventos')">Corporativos</div>
+    <div class="strip-item" onclick="goTo('eventos')">Aniversarios</div>
+  </div>
+
+  <div class="home-cards">
+    <div class="hc" onclick="goTo('eventos')">
+      <span class="hc-icon">🎊</span>
+      <div class="hc-title">Tipos de Eventos</div>
+      <div class="hc-desc">Bodas, XV años, graduaciones, corporativos y más. Cada ocasión merece lo mejor.</div>
+      <span class="hc-arrow">Ver eventos →</span>
+    </div>
+    <div class="hc" onclick="goTo('espacio')">
+      <span class="hc-icon">🌙</span>
+      <div class="hc-title">El Espacio</div>
+      <div class="hc-desc">Instalaciones únicas con terraza al aire libre, iluminación profesional y capacidad para cientos de invitados.</div>
+      <span class="hc-arrow">Conocer espacio →</span>
+    </div>
+    <div class="hc" onclick="goTo('paquetes')">
+      <span class="hc-icon">✨</span>
+      <div class="hc-title">Nuestros Paquetes</div>
+      <div class="hc-desc">Opciones para cada presupuesto y necesidad. Desde eventos íntimos hasta celebraciones de lujo.</div>
+      <span class="hc-arrow">Ver paquetes →</span>
+    </div>
+    <div class="hc" onclick="goTo('reserva')">
+      <span class="hc-icon">📅</span>
+      <div class="hc-title">Reservar Fecha</div>
+      <div class="hc-desc">Las fechas se agotan rápido. Aparta la tuya hoy y asegura el día más especial.</div>
+      <span class="hc-arrow">Apartar fecha →</span>
+    </div>
+  </div>
+
+  <div class="home-test">
+    <div class="sec-tag">Lo que dicen</div>
+    <h2 class="sec-title">Familias que <span>confiaron en nosotros</span></h2>
+    <div class="test-grid">
+      <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Organizamos la boda de nuestra hija aquí y fue absolutamente perfecto. El equipo estuvo al pendiente de cada detalle."</p><div class="tc-author">Familia Ramírez Gutiérrez</div><div class="tc-event">Boda · Marzo 2025</div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Los XV años de mi hija superaron todas nuestras expectativas. La decoración y el ambiente fueron de otro nivel."</p><div class="tc-author">Claudia Mendoza</div><div class="tc-event">XV Años · Enero 2025</div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Realizamos nuestro evento corporativo anual y quedamos muy satisfechos. Instalaciones impecables y atención personalizada."</p><div class="tc-author">Ing. Roberto Castillo</div><div class="tc-event">Corporativo · Nov 2024</div></div>
+    </div>
+  </div>
+
+  <footer>
+    <div><div class="ft-logo">Un <span>Sueño</span></div><p class="ft-txt">El espacio perfecto para celebrar los momentos más importantes de tu vida en Guadalajara, Jalisco.</p><div class="ft-social"><a href="#" class="soc-btn">ig</a><a href="#" class="soc-btn">fb</a><a href="#" class="soc-btn">wa</a></div></div>
+    <div><div class="ft-col-title">Navegación</div><ul class="ft-links"><li><a onclick="goTo('eventos')">Tipos de eventos</a></li><li><a onclick="goTo('espacio')">El espacio</a></li><li><a onclick="goTo('paquetes')">Paquetes</a></li><li><a onclick="goTo('galeria')">Galería</a></li></ul></div>
+    <div><div class="ft-col-title">Eventos</div><ul class="ft-links"><li><a onclick="goTo('eventos')">Bodas</a></li><li><a onclick="goTo('eventos')">XV Años</a></li><li><a onclick="goTo('eventos')">Graduaciones</a></li><li><a onclick="goTo('eventos')">Corporativos</a></li></ul></div>
+    <div><div class="ft-col-title">Contacto</div><ul class="ft-links"><li><a href="#">WhatsApp</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">Google Maps</a></li></ul></div>
+  </footer>
+  <div class="ft-bottom"><span id="ftYear"></span><span>Diseño web profesional</span></div>
+</div>
+
+<!-- ════════════════════════════════════════
+     VIEW: EVENTOS
+════════════════════════════════════════ -->
+<div class="view" id="view-eventos">
+  <div class="page-header">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&q=80" alt="Eventos">
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <div class="page-header-tag">Celebra con nosotros</div>
+      <h1 class="page-header-title">Tipos de <span>Eventos</span></h1>
+    </div>
+  </div>
+
+  <div class="ev-intro">
+    <div>
+      <div class="sec-tag">¿Qué celebramos?</div>
+      <h2 class="sec-title">Cada ocasión es <span>única</span></h2>
+      <p class="ev-intro-body">En Terraza Un Sueño hemos tenido el honor de ser parte de los momentos más importantes en la vida de cientos de familias. Desde íntimas celebraciones hasta grandes eventos, nuestro equipo se encarga de cada detalle para que tú solo disfrutes.</p>
+      <button class="btn-gold" onclick="goTo('reserva')">Consultar disponibilidad</button>
+    </div>
+    <div class="esp-mosaic fi">
+      <div class="mos-main"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=700&q=80" alt="Boda"></div>
+      <div class="mos-sm"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=400&q=80" alt="XV"></div>
+      <div class="mos-sm"><img src="https://images.unsplash.com/photo-1627827558630-fb6073856e04?w=400&q=80" alt="Graduación"></div>
+    </div>
+  </div>
+
+  <div class="ev-types">
+    <div class="ev-type-card fi">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Bodas">
+      <div class="ev-badge">Más solicitado</div>
+      <div class="ev-grad"></div>
+      <div class="ev-info"><div class="ev-info-name">Bodas</div><div class="ev-info-desc">El día más especial de tu vida merece el mejor escenario</div></div>
+    </div>
+    <div class="ev-type-card fi">
+      <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80" alt="XV Años">
+      <div class="ev-grad"></div>
+      <div class="ev-info"><div class="ev-info-name">XV Años</div><div class="ev-info-desc">Una noche de cuento de hadas que recordará toda la vida</div></div>
+    </div>
+    <div class="ev-type-card fi">
+      <img src="https://images.unsplash.com/photo-1627827558630-fb6073856e04?w=800&q=80" alt="Graduaciones">
+      <div class="ev-grad"></div>
+      <div class="ev-info"><div class="ev-info-name">Graduaciones</div><div class="ev-info-desc">Celebra tu logro y el de tu generación a lo grande</div></div>
+    </div>
+    <div class="ev-type-card fi">
+      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Corporativos">
+      <div class="ev-grad"></div>
+      <div class="ev-info"><div class="ev-info-name">Corporativos</div><div class="ev-info-desc">Impresiona a tu equipo, clientes y socios</div></div>
+    </div>
+    <div class="ev-type-card fi">
+      <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt="Festejos">
+      <div class="ev-grad"></div>
+      <div class="ev-info"><div class="ev-info-name">Bautizos y Festejos</div><div class="ev-info-desc">Primeras comuniones, aniversarios y celebraciones familiares</div></div>
+    </div>
+    <div class="ev-type-card fi">
+      <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" alt="Especiales">
+      <div class="ev-grad"></div>
+      <div class="ev-info"><div class="ev-info-name">Eventos Especiales</div><div class="ev-info-desc">Lanzamientos, presentaciones y cualquier ocasión memorable</div></div>
+    </div>
+  </div>
+
+  <div class="ev-cta-band">
+    <div class="ev-cta-text">¿Tienes una fecha <span>en mente?</span></div>
+    <button class="btn-gold" onclick="goTo('reserva')">Apartar mi fecha ahora</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     VIEW: ESPACIO
+════════════════════════════════════════ -->
+<div class="view" id="view-espacio">
+  <div class="page-header">
+    <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=1400&q=80" alt="El Espacio">
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <div class="page-header-tag">Nuestras instalaciones</div>
+      <h1 class="page-header-title">El <span>Espacio</span></h1>
+    </div>
+  </div>
+
+  <div class="esp-split">
+    <div>
+      <div class="sec-tag">Diseñado para ti</div>
+      <h2 class="sec-title">Un espacio que <span>habla por sí solo</span></h2>
+      <p class="esp-body">Diseñado para crear atmósferas únicas, nuestra terraza combina la elegancia de los espacios abiertos con la comodidad de instalaciones de primer nivel. Cada rincón fue pensado para hacer de tu evento algo verdaderamente extraordinario.</p>
+      <div class="esp-feats">
+        <div class="ef fi"><span class="ef-icon">🌙</span><span class="ef-text">Terraza al aire libre con vista nocturna</span></div>
+        <div class="ef fi"><span class="ef-icon">🎵</span><span class="ef-text">Sonido e iluminación profesional</span></div>
+        <div class="ef fi"><span class="ef-icon">🚗</span><span class="ef-text">Estacionamiento privado con valet</span></div>
+        <div class="ef fi"><span class="ef-icon">👨‍🍳</span><span class="ef-text">Cocina equipada para banquetes</span></div>
+        <div class="ef fi"><span class="ef-icon">❄️</span><span class="ef-text">Área techada climatizada</span></div>
+        <div class="ef fi"><span class="ef-icon">📸</span><span class="ef-text">Zonas fotográficas decoradas</span></div>
+      </div>
+      <button class="btn-gold" onclick="goTo('reserva')">Agendar visita guiada</button>
+    </div>
+    <div class="esp-mosaic fi">
+      <div class="mos-main"><img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=700&q=80" alt="Terraza"></div>
+      <div class="mos-sm"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400&q=80" alt="Detalle"></div>
+      <div class="mos-sm"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=400&q=80" alt="Decoración"></div>
+    </div>
+  </div>
+
+  <div class="esp-caps">
+    <div class="cap-item fi"><div class="cap-num">300+</div><div class="cap-label">Invitados máx.</div></div>
+    <div class="cap-item fi"><div class="cap-num">8+</div><div class="cap-label">Años de experiencia</div></div>
+    <div class="cap-item fi"><div class="cap-num">300+</div><div class="cap-label">Eventos realizados</div></div>
+    <div class="cap-item fi"><div class="cap-num">5.0★</div><div class="cap-label">Calificación Google</div></div>
+  </div>
+
+  <div class="vbanner">
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.coverr.co/videos/coverr-people-dancing-at-a-party-5089/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="vbanner-over">
+      <p class="vb-quote">"Cada evento merece un escenario <span>extraordinario</span>"</p>
+      <p class="vb-sub">Más de 300 celebraciones creadas con pasión</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     VIEW: PAQUETES
+════════════════════════════════════════ -->
+<div class="view" id="view-paquetes">
+  <div class="page-header">
+    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1400&q=80" alt="Paquetes">
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <div class="page-header-tag">Planes disponibles</div>
+      <h1 class="page-header-title">Nuestros <span>Paquetes</span></h1>
+    </div>
+  </div>
+
+  <div class="pkgs-intro fi">
+    <div class="sec-tag" style="justify-content:center">Elige tu plan</div>
+    <h2 class="sec-title" style="text-align:center">El paquete <span>perfecto para ti</span></h2>
+    <p class="pkgs-intro-body">Contamos con opciones para cada tipo de evento y presupuesto. Todos nuestros paquetes incluyen coordinación personalizada y el respaldo de más de 8 años de experiencia en eventos memorables.</p>
+  </div>
+
+  <div class="pkgs-grid">
+    <div class="pkg fi">
+      <div class="pkg-ico">✨</div>
+      <div class="pkg-name">Esencial</div>
+      <div class="pkg-desc">Perfecto para celebraciones íntimas con todo lo necesario para una noche especial</div>
+      <div class="pkg-price">A consultar</div>
+      <div class="pkg-note">Precio según número de invitados</div>
+      <div class="pkg-div"></div>
+      <ul class="pkg-list">
+        <li>Uso de instalaciones 5 horas</li><li>Mobiliario y mantelería</li>
+        <li>Iluminación básica</li><li>Personal de servicio</li><li>Estacionamiento</li>
+      </ul>
+      <button class="btn-pkg" onclick="openPkg('Esencial')">Solicitar información</button>
+    </div>
+    <div class="pkg feat fi">
+      <div class="pkg-ribbon">Más popular</div>
+      <div class="pkg-ico">🌟</div>
+      <div class="pkg-name">Clásico</div>
+      <div class="pkg-desc">El favorito para bodas y XV años. Todo lo que necesitas para una noche perfecta e inolvidable</div>
+      <div class="pkg-price">A consultar</div>
+      <div class="pkg-note">Precio según número de invitados</div>
+      <div class="pkg-div"></div>
+      <ul class="pkg-list">
+        <li>Uso de instalaciones 6 horas</li><li>Mobiliario, mantelería y cristalería</li>
+        <li>DJ y equipo de sonido profesional</li><li>Iluminación especial</li>
+        <li>Coordinador de evento</li><li>Capitán y meseros</li><li>Valet parking</li>
+      </ul>
+      <button class="btn-pkg" onclick="openPkg('Clásico')">Solicitar información</button>
+    </div>
+    <div class="pkg fi">
+      <div class="pkg-ico">👑</div>
+      <div class="pkg-name">Premium</div>
+      <div class="pkg-desc">La experiencia completa y sin límites para el evento que siempre soñaste tener</div>
+      <div class="pkg-price">A consultar</div>
+      <div class="pkg-note">Precio según número de invitados</div>
+      <div class="pkg-div"></div>
+      <ul class="pkg-list">
+        <li>Todo lo del paquete Clásico</li><li>Banquete completo a 2 tiempos</li>
+        <li>Barra de bebidas premium</li><li>Decoración personalizada</li>
+        <li>Efectos especiales y humo</li><li>Hora extra sin costo</li>
+      </ul>
+      <button class="btn-pkg" onclick="openPkg('Premium')">Solicitar información</button>
+    </div>
+  </div>
+
+  <div class="pkgs-cta">
+    <p>¿No encuentras el paquete ideal? Creamos propuestas personalizadas para cada evento.</p>
+    <button class="btn-gold" onclick="goTo('reserva')">Solicitar cotización personalizada</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     VIEW: GALERÍA
+════════════════════════════════════════ -->
+<div class="view" id="view-galeria">
+  <div class="page-header">
+    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1400&q=80" alt="Galería">
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <div class="page-header-tag">Momentos reales</div>
+      <h1 class="page-header-title">Galería de <span>Eventos</span></h1>
+    </div>
+  </div>
+
+  <div class="gal-intro">
+    <div class="sec-tag">Nuestro trabajo</div>
+    <h2 class="sec-title">Cada foto, <span>una historia</span></h2>
+    <div class="gal-filters">
+      <button class="gf active" onclick="filterGal('todos',this)">Todos</button>
+      <button class="gf" onclick="filterGal('bodas',this)">Bodas</button>
+      <button class="gf" onclick="filterGal('xv',this)">XV Años</button>
+      <button class="gf" onclick="filterGal('corporativo',this)">Corporativos</button>
+      <button class="gf" onclick="filterGal('espacio',this)">El Espacio</button>
+    </div>
+  </div>
+
+  <div class="gal-masonry" id="galMasonry">
+    <div class="gi tall" data-cat="bodas"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80" alt="Boda"><div class="gi-label">Bodas</div></div>
+    <div class="gi" data-cat="espacio"><img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=80" alt="Terraza"><div class="gi-label">El Espacio</div></div>
+    <div class="gi" data-cat="xv"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80" alt="XV Años"><div class="gi-label">XV Años</div></div>
+    <div class="gi wide" data-cat="corporativo"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80" alt="Corporativo"><div class="gi-label">Corporativos</div></div>
+    <div class="gi" data-cat="espacio"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80" alt="Decoración"><div class="gi-label">Decoración</div></div>
+    <div class="gi tall" data-cat="bodas"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80" alt="Boda"><div class="gi-label">Bodas</div></div>
+    <div class="gi" data-cat="xv"><img src="https://images.unsplash.com/photo-1627827558630-fb6073856e04?w=600&q=80" alt="Graduación"><div class="gi-label">Graduaciones</div></div>
+    <div class="gi" data-cat="espacio"><img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=80" alt="Noche"><div class="gi-label">Noche</div></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     VIEW: RESERVA
+════════════════════════════════════════ -->
+<div class="view" id="view-reserva">
+  <div class="page-header">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&q=80" alt="Reserva">
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <div class="page-header-tag">Agenda tu evento</div>
+      <h1 class="page-header-title">Aparta tu <span>Fecha</span></h1>
+    </div>
+  </div>
+
+  <div class="res-view">
+    <div>
+      <div class="sec-tag">Disponibilidad</div>
+      <h2 class="sec-title">Elige tu <span>fecha ideal</span></h2>
+      <p class="res-body">Las fechas se agotan rápido, especialmente en temporada alta. Selecciona tu fecha en el calendario y en menos de 24 horas te confirmamos disponibilidad y cotización.</p>
+      <div class="res-info">
+        <div class="res-row"><span class="res-dot"></span><span>📍 <strong>Guadalajara, Jalisco</strong></span></div>
+        <div class="res-row"><span class="res-dot"></span><span>📞 <strong>[Teléfono del negocio]</strong></span></div>
+        <div class="res-row"><span class="res-dot"></span><span>🕐 <strong>Lun–Sáb 9:00 AM – 7:00 PM</strong></span></div>
+      </div>
+      <div class="cal-legend">
+        <div class="leg-item"><span class="leg-dot ld-a"></span>Disponible</div>
+        <div class="leg-item"><span class="leg-dot ld-o"></span>Ocupado</div>
+        <div class="leg-item"><span class="leg-dot ld-p"></span>En proceso</div>
+        <div class="leg-item"><span class="leg-dot ld-s"></span>Tu selección</div>
+      </div>
+    </div>
+    <div class="form-card">
+      <div class="cal-wrap">
+        <div class="cal-hdr">
+          <button class="cal-btn" id="prevM">&#8249;</button>
+          <span class="cal-lbl" id="calLbl"></span>
+          <button class="cal-btn" id="nextM">&#8250;</button>
+        </div>
+        <div class="cal-wkdays"><span>Dom</span><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span></div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+      <div id="fechaBadge" class="fecha-badge"></div>
+      <div class="form-card-title">Completa tu solicitud</div>
+      <div class="fg">
+        <div class="fg-group"><label>Nombre</label><input id="f-nombre" type="text" placeholder="Tu nombre completo"></div>
+        <div class="fg-group"><label>Teléfono</label><input id="f-tel" type="tel" placeholder="33 0000 0000"></div>
+        <div class="fg-group"><label>Tipo de evento</label><select><option>Boda</option><option>XV Años</option><option>Graduación</option><option>Corporativo</option><option>Bautizo</option><option>Otro</option></select></div>
+        <div class="fg-group"><label>No. de invitados</label><input type="number" placeholder="Ej. 150"></div>
+        <div class="fg-group full"><label>Paquete de interés</label><select><option>Esencial</option><option>Clásico</option><option>Premium</option><option>No sé aún</option></select></div>
+        <div class="fg-group full"><label>Mensaje (opcional)</label><textarea placeholder="Cuéntanos más sobre tu evento..."></textarea></div>
+      </div>
+      <button class="btn-submit" id="btnSubmit">Enviar solicitud ✦</button>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox"><button id="lb-close">✕</button><img id="lb-img" src="" alt=""></div>
+<!-- Modal paquete -->
+<div id="pkg-modal"><div class="pkg-modal-card"><button class="pkg-modal-close" onclick="closePkgModal()">✕</button><div class="pkg-modal-title" id="pkg-modal-title"></div><p class="pkg-modal-body">Para conocer el precio exacto según el número de invitados y la fecha, contáctanos directamente. Te preparamos una cotización personalizada.</p><a class="btn-gold" href="https://wa.me/521330000000?text=Hola,%20me%20interesa%20el%20paquete%20" id="pkg-wa-btn" target="_blank" style="width:100%;text-align:center;display:block">💬 Contactar por WhatsApp</a></div></div>
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── Año dinámico ──
+document.getElementById('ftYear').textContent = '© ' + new Date().getFullYear() + ' Terraza Un Sueño · Guadalajara, Jalisco';
+
+// ── Navegación entre vistas ──
+function goTo(view) {
+  // Ocultar todas
+  document.querySelectorAll('.view').forEach(v => {
+    v.classList.remove('active');
+    v.style.opacity = '0';
+    setTimeout(()=>{ if(!v.classList.contains('active')) v.style.display='none'; }, 400);
+  });
+  // Mostrar la elegida
+  const target = document.getElementById('view-' + view);
+  if(!target) return;
+  target.style.display = 'block';
+  setTimeout(()=>{ target.classList.add('active'); target.style.opacity='1'; }, 10);
+  window.scrollTo({top:0, behavior:'smooth'});
+
+  // Actualizar nav activo
+  document.querySelectorAll('nav ul li a[data-view], .mobile-menu a[data-view]').forEach(a => {
+    a.classList.toggle('active', a.dataset.view === view);
+  });
+
+  // Navbar sólido en vistas internas
+  const nb = document.getElementById('navbar');
+  if(view === 'home'){
+    nb.classList.remove('solid');
+  } else {
+    nb.classList.add('solid');
+  }
+
+  // Activar fade-in de la nueva vista
+  setTimeout(()=>{
+    target.querySelectorAll('.fi').forEach(el => {
+      el.classList.remove('on');
+      setTimeout(()=> el.classList.add('on'), 100);
+    });
+  }, 50);
+
+  // Init calendario si va a reserva
+  if(view === 'reserva') renderCal();
+}
+
+// Init: mostrar home
+goTo('home');
+
+// ── Navbar scroll (solo en home) ──
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if(document.getElementById('view-home').classList.contains('active')){
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  }
+});
+
+// ── Menú hamburguesa ──
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ── Partículas hero ──
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+function resizeCv(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
+resizeCv(); window.addEventListener('resize',resizeCv);
+const pts = Array.from({length:55},()=>({
+  x:Math.random()*window.innerWidth, y:Math.random()*window.innerHeight,
+  r:Math.random()*1.4+0.3, vx:(Math.random()-.5)*.25, vy:-Math.random()*.35-.08, a:Math.random()*.5+.15
+}));
+(function anim(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  pts.forEach(p=>{
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.y<0){p.y=canvas.height; p.x=Math.random()*canvas.width;}
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(232,201,122,${p.a})`; ctx.fill();
+  });
+  requestAnimationFrame(anim);
+})();
+
+// ── Lightbox ──
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+document.addEventListener('click', e => {
+  const gi = e.target.closest('.gi');
+  if(gi){ const img=gi.querySelector('img'); lbImg.src=img.src; lb.classList.add('open'); document.body.style.overflow='hidden'; }
+});
+function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+lb.addEventListener('click', closeLb);
+document.getElementById('lb-close').addEventListener('click',e=>{e.stopPropagation();closeLb();});
+
+// ── Modal paquetes ──
+function openPkg(name){
+  document.getElementById('pkg-modal-title').textContent='Paquete '+name;
+  document.getElementById('pkg-wa-btn').href='https://wa.me/521330000000?text=Hola,%20me%20interesa%20el%20Paquete%20'+encodeURIComponent(name)+',%20quisiera%20más%20información.';
+  document.getElementById('pkg-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closePkgModal(){
+  document.getElementById('pkg-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('pkg-modal').addEventListener('click',function(e){if(e.target===this)closePkgModal();});
+
+// ── Toast ──
+function toast(msg,type){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.className='toast show '+type;
+  setTimeout(()=>t.className='toast',3000);
+}
+
+// ── Filtro galería ──
+function filterGal(cat, btn){
+  document.querySelectorAll('.gf').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#galMasonry .gi').forEach(gi=>{
+    const show = cat==='todos'||gi.dataset.cat===cat;
+    gi.style.display = show ? '' : 'none';
+  });
+}
+
+// ── Calendario ──
+const OCCUPIED=[4,8,11,18,25], PENDING=[6,13,20,27];
+const MES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+let curDate=new Date(), selDay=null;
+function renderCal(){
+  const grid=document.getElementById('calGrid'), lbl=document.getElementById('calLbl');
+  const y=curDate.getFullYear(), m=curDate.getMonth();
+  lbl.textContent=MES[m]+' '+y; grid.innerHTML='';
+  const first=new Date(y,m,1).getDay(), days=new Date(y,m+1,0).getDate(), today=new Date();
+  for(let i=0;i<first;i++){const b=document.createElement('div');b.className='cd blank';grid.appendChild(b);}
+  for(let d=1;d<=days;d++){
+    const cell=document.createElement('div'); cell.className='cd'; cell.textContent=d;
+    const past=new Date(y,m,d)<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    if(past) cell.classList.add('past');
+    else if(OCCUPIED.includes(d)){cell.classList.add('occ');cell.title='Fecha ocupada';}
+    else if(PENDING.includes(d)){cell.classList.add('pend');cell.title='En proceso';}
+    else{cell.classList.add('avail');cell.addEventListener('click',()=>pickDay(d));}
+    if(selDay&&selDay.d===d&&selDay.m===m&&selDay.y===y) cell.classList.add('sel');
+    grid.appendChild(cell);
+  }
+}
+function pickDay(d){
+  selDay={d,m:curDate.getMonth(),y:curDate.getFullYear()};
+  renderCal();
+  const badge=document.getElementById('fechaBadge');
+  badge.textContent='📅 '+d+' de '+MES[selDay.m]+' '+selDay.y;
+  badge.style.display='block';
+}
+document.getElementById('prevM').addEventListener('click',()=>{
+  const t=new Date(); if(curDate.getFullYear()===t.getFullYear()&&curDate.getMonth()===t.getMonth()) return;
+  curDate.setMonth(curDate.getMonth()-1); renderCal();
+});
+document.getElementById('nextM').addEventListener('click',()=>{curDate.setMonth(curDate.getMonth()+1);renderCal();});
+
+// ── Formulario ──
+document.getElementById('btnSubmit').addEventListener('click',()=>{
+  const n=document.getElementById('f-nombre').value.trim(), t=document.getElementById('f-tel').value.trim();
+  if(!n||!t){toast('Por favor completa tu nombre y teléfono','err');return;}
+  if(!selDay){toast('Selecciona una fecha en el calendario','err');return;}
+  toast('¡Solicitud enviada! Te contactamos en menos de 24 horas 🎉','ok');
+});
+</script>
+</body>
+</html>
